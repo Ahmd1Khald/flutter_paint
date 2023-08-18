@@ -111,7 +111,7 @@ class _DrawingBoardState extends State<DrawingBoard> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(
               colors.length,
-              (index) => _buildColorChose(colors[index]),
+                  (index) => _buildColorChose(colors[index]),
             ),
           ),
         ),
@@ -152,6 +152,7 @@ class _DrawingPainter extends CustomPainter {
       } else if (drawingPoints[i + 1] == null) {
         offsetsList.clear();
         offsetsList.add(drawingPoints[i].offset);
+        canvas.drawCircle(Offset.infinite, double.infinity, Paint());
 
         canvas.drawPoints(
             PointMode.points, offsetsList, drawingPoints[i].paint);
